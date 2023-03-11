@@ -1,17 +1,15 @@
  
 <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
     <div class="container-fluid">
-        <div class="navbar-header">     
-            <a href="#" class="navbar-brand">JK</a>
-             <button class="navbar-toggler"  type="button" 
+             <a href="#" class="navbar-brand">JK</a>
+             <button class="navbar-toggler text-right"  type="button" 
              (click)="collapsed = !collapsed">
               <span class="navbar-toggler-icon"></span>
-            </button>
-             
-          </div>
+            </button>             
+     
           <div class="collapse navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
               
-                <ul class="navbar-nav  mr-auto mt-2 mt-lg-0">
+                <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home</a></li>
                     <li class="nav-item">
@@ -21,14 +19,5 @@
 
           </div>
         
-          <!-- <div class="navbar-header"> 
-            <a href="#" class="navbar-brand"><span class="caret">MainTis</span></a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                    <li><a href="#">Jokes List</a></li>
-                    <li><a href="#">Jokes Detail</a></li>
-            </ul>
-        </div> -->
     </div>
 </nav>
