@@ -7,7 +7,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { JokesComponent } from './jokes/jokes.component';
 import { JokesListComponent } from './jokes/jokes-list/jokes-list.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { GlobalHTTPInterceptorService } from './global-http-Interceptor.service';
+import { JokesService } from './jokes/jokes.service';
 import { JokesDetailComponent } from './jokes/jokes-detail/jokes-detail.component';
+import { JokesCountService } from './jokes/jokes-count.service';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +21,22 @@ import { JokesDetailComponent } from './jokes/jokes-detail/jokes-detail.componen
     JokesComponent,
     JokesListComponent,
     JokesDetailComponent
+    
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule  
+    AppRoutingModule ,
+    HttpClientModule
+ 
   ],
-  providers: [],
+  providers: [
+   
+    JokesService,
+    JokesCountService,
+    {provide:HTTP_INTERCEPTORS,useClass:GlobalHTTPInterceptorService,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

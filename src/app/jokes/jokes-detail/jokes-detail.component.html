@@ -1,1 +1,23 @@
-<p>jokes-detail works!</p>
+<div class="card-header">
+    <div class="row">
+        <button class="btn btn-info"><h4 >JokesCount-{{jokesCountTotal}}</h4></button>
+    </div>
+</div>
+<div class="card-body">
+    <div class="row">
+        <div class="col-lg-12" *ngFor="let joke of jokesArray">
+            <p>{{joke.setup}}</p>
+            <br>
+            <p>{{joke.punchline}}</p>        
+        </div>
+        <div *ngIf="loading">loading...</div>
+ 
+        <div *ngIf="errorMessage" class="alert alert-warning">
+        <strong>Warning!</strong> {{errorMessage | json}}
+        </div>
+    </div>
+    
+</div>
+<div class="card-footer">
+<button type="button" (click)="onNextJoke()" class="btn btn-primary">Next Joke</button>
+</div>
